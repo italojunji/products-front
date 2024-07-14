@@ -1,0 +1,23 @@
+.header-spacer {
+    flex: 1 1 auto;
+}
+
+.header-toolbar {
+    background-color: darkblue;
+    color:azure;
+    .header-title {
+        padding-left: 20px;
+    }
+}
+
+.content-container {
+    height:100%;
+    border: 1px solid #ddd;
+    min-height: 100vh;
+}
+
+.sidebar{
+    background-color: darkgray;
+    height:100%;
+    width: 250px;
+}

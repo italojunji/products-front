@@ -1,8 +1,10 @@
-export class Product {
-  id?: number;
-  name?: string;
+import { Category } from "./category";
+
+export interface Product {
+  id: number;
+  name: string;
   description?: string;
-  price?: number;
-  category?: number;
-  available?: boolean;
+  price: number;
+  category: Category;
+  available: boolean;
 }
