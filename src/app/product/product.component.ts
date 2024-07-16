@@ -32,7 +32,7 @@ export class ProductComponent {
     
   }
 
-  displayColumns = ["id","name", "description", "price", "category", "available"];
+  displayColumns = ["id","name", "description", "price", "category", "available", "actions"];
   dataSource = new MatTableDataSource(this.products);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

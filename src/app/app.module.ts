@@ -9,11 +9,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatToolbarModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule
   ],
   providers: [
     provideAnimationsAsync(),

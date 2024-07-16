@@ -9,6 +9,7 @@ import { ProductDeleteComponent } from './product-delete/product-delete.componen
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatPaginator } from '@angular/material/paginator';
     ProductRoutingModule,
     MatCardModule,
     MatTableModule,
-    MatPaginator
+    MatPaginator,
+    MatIconModule
   ]
 })
 export class ProductModule { }

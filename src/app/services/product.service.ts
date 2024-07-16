@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -23,11 +23,15 @@ export class ProductService {
   ) {}
 
   createProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(this.apiUrl, product);
+    return this.httpClient.post<Product>(this.apiUrl, product, {
+      headers: this.headers
+    });
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.httpClient.put<Product>(this.apiUrl, product);
+    return this.httpClient.put<Product>(this.apiUrl, product, {
+      headers: this.headers
+    });
   }
 
   getProducts(): Observable<Product[]> {
@@ -38,6 +42,13 @@ export class ProductService {
 
   deleteProduct(id: Number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
-    return this.httpClient.delete<void>(url);
+    return this.httpClient.delete<void>(url, {
+      headers: this.headers
+    }).pipe(
+      catchError((error: HttpErrorResponse) => {
+          alert(error.error);
+          return throwError(() =>'Something went wrong...');
+      })
+  );
   }
 }

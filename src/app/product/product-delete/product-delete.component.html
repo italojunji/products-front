@@ -1,1 +1,9 @@
-<p>product-delete works!</p>
+<mat-card>
+    <mat-card-content>
+        <p>Are you sure you want to delete the product with id {{itemId}}?</p>
+    </mat-card-content>
+    <mat-card-actions class="action-buttons">
+        <button mat-button color="green" (click)="onConfirm()">Yes</button>
+        <button mat-button color="primary" (click)="onCancel()">Cancel</button>
+    </mat-card-actions>
+</mat-card>

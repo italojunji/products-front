@@ -1,20 +1,14 @@
 <mat-toolbar class="header-toolbar">
-  <button mat-icon-button (click)="toggleSidebar()" lass="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button (click)="toggleSidebar()" aria-label="Icon of menu that open/close sidebar">
+    <mat-icon>menu_open</mat-icon>
   </button>
   <span class="header-title">Product List App</span>
   <span class="header-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
 </mat-toolbar>
 
 <mat-drawer-container class="content-container">
   <mat-drawer mode="side" [opened]="sidebarOpen" class="sidebar">
-    Sidebar
+    <app-sidebar></app-sidebar>
   </mat-drawer>
   <mat-drawer-content class="main-content">
     <router-outlet></router-outlet>
