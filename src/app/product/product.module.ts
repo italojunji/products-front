@@ -10,7 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { InputMaskModule } from 'primeng/inputmask';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,14 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatTableModule,
     MatPaginator,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    InputMaskModule,
+    MatCheckboxModule,
+    MatSelectModule
   ]
 })
 export class ProductModule { }

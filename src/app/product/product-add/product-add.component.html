@@ -1,1 +1,42 @@
-<p>product-add works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Add New Product</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="formGroup">
+            <div>
+                <mat-form-field class="others">
+                    <mat-label>Name</mat-label>
+                    <input matInput id="nameId" formControlName="nameControl">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="description">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput id="descriptionId" formControlName="descriptionControl"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="others">
+                    <mat-label>Price</mat-label>
+                    <input matInput mask="99" id="priceId" formControlName="priceControl">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="others">
+                    <mat-label>Category</mat-label>
+                    <mat-select id="categoryId" formControlName="categoryControl">
+                        <mat-option *ngFor="let category of categoriesList" [value]="category">{{category.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-checkbox id="availableId" formControlName="availableControl">Available</mat-checkbox>
+            </div>
+
+            <mat-card-actions class="action-buttons">
+                <button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="saveProduct()">Save</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>
