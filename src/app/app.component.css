@@ -13,7 +13,7 @@
 .content-container {
     height:100%;
     border: 1px solid #ddd;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .sidebar{

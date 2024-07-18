@@ -5,6 +5,7 @@ import { Category } from '../../models/category';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
 import { ProductComponent } from '../product.component';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-product-add',
@@ -14,27 +15,16 @@ import { ProductComponent } from '../product.component';
 export class ProductAddComponent implements OnInit {
 
   formGroup!: FormGroup;
-  categoriesList: Category[] = [ //TO DO: GET LIST OF CATEGORIES FROM DATABASE
-    {
-      id: 1,
-      name: "Category_1"
-    },
-    {
-      id: 2,
-      name: "Category_2"
-    },
-    {
-      id: 3,
-      name: "Category_3"
-    }
-  ];
+  categoriesList!: Category[];
 
   constructor(private productService: ProductService,
+    private categoryService: CategoryService,
     private router: Router
   ){}
   
   ngOnInit(): void {
    this.createFormGroup();
+   this.categoryService.getCategories().subscribe(data => this.categoriesList = data);
   }
 
   private createFormGroup(): void {

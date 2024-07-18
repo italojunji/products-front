@@ -10,8 +10,8 @@ export class ProductService {
 
   private apiUrl = `${this.environment.apiUrl}/products`;
 
-  private username = 'super';
-  private password = 'super';
+  private username = `${this.environment.username}`;
+  private password = `${this.environment.password}`;
 
   private headers: HttpHeaders = new HttpHeaders({
     'Content-type': 'application/json',
