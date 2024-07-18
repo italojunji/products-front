@@ -46,9 +46,25 @@ export class ProductService {
       headers: this.headers
     }).pipe(
       catchError((error: HttpErrorResponse) => {
-          alert(error.error);
-          return throwError(() =>'Something went wrong...');
+        return this.returnError(error)
       })
-  );
+    );
   }
+
+  getProductById(id: Number): Observable<Product> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.httpClient.get<Product>(url, {
+      headers: this.headers
+    }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return this.returnError(error)
+      })
+    );
+  }
+
+  private returnError(error: HttpErrorResponse) {
+    alert(error.error);
+    return throwError(() =>'Something went wrong...');
+  }
+
 }

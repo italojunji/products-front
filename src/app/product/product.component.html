@@ -35,7 +35,11 @@
 
             <ng-container matColumnDef="available">
                 <th mat-header-cell *matHeaderCellDef>Available</th>
-                <th mat-cell *matCellDef="let element">{{element.available}}</th>
+                <th mat-cell *matCellDef="let element">
+                    <mat-icon [color]="element.available ? 'sucess' : 'warn' ">
+                        {{element.available ? 'check_circle' : 'cancel'}}
+                    </mat-icon>
+                </th>
             </ng-container>
 
             <ng-container matColumnDef="actions">

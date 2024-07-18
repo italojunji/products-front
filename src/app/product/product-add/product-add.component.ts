@@ -64,7 +64,7 @@ export class ProductAddComponent implements OnInit {
       name: formValues.nameControl,
       description: formValues.descriptionControl,
       price: formValues.priceControl,
-      category:  formValues.categoryControl,
+      category:  {id: formValues.categoryControl},
       available: formValues.availableControl
     };
 
